@@ -1,0 +1,731 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Roadtravellers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static  'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static  'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static  'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static  'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static  'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static  'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/style.css' %}">
+    <style>
+
+
+      .shape {
+ 	background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  height: 400px;
+  transition: all 1s ease-in-out;
+  width: 400px;
+  z-index: 5;
+}
+
+@keyframes morph {
+  0% {
+			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+			background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
+	
+	50% {
+			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+			background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+	}
+  
+	100% {
+		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+		background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
+}
+
+    </style>
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap"  id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+   
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container" >
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-md-3 col-xl-4  d-block">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0"><span class="text-primary" style="font-family: 'Tangerine',cursive;font-size: 5rem;">Road</span>Travellers</a></h1>
+           
+          </div>
+          
+          <div class="col-12 col-md-9 col-xl-8 main-menu">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#features-section" class="nav-link">Features</a></li>
+                <li class="has-children">
+                  <a href="#about-section" class="nav-link">About Us</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" target="_blank" class="nav-link"><span class="text-primary">More Free Templates</span></a></li>
+                    <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
+                    <li class="has-children">
+                      <a href="#">More Links</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Menu One</a></li>
+                        <li><a href="#">Menu Two</a></li>
+                        <li><a href="#">Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                
+                <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+                <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+                <li><a href="" class="nav-link" data-toggle="modal" data-target="#modalLoginForm">Login</a></li>
+                <li><a href="" data-toggle="modal" data-target="#modalRegisterForm"><button type="button"  class="b">Sign Up</button></a></li>
+
+                 
+                
+                         
+              </ul>
+            </nav>
+          </div>
+ 
+          
+          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+         
+        </div>
+      </div>
+      
+    </header>
+    
+
+    <div class="site-blocks-cover" style="overflow: hidden;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+         
+          <div class="col-md-12 " style="position: relative;" data-aos="fade-up" data-aos-delay="200">
+            
+            <img src="https://s0.geograph.org.uk/geophotos/02/25/51/2255114_a372cb6e.jpg" class="shape lazy img-fluid img-absolute">
+            <!-- <img src="images/bheem.jpg" alt="Image" class="lazy img-fluid img-absolute"> -->
+            
+            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 mr-auto">
+                <h1>Plan your next road trip faster.</h1>
+                <h3 class="mb-5">Build your itinerary in Roadtravellers and then use our turn-by-turn navigation to lead the way.</h3>
+                <div>
+                  <a href="#" class="btn btn-primary mr-2 mb-2">Book Your Tickets -></a>
+                </div>
+              </div>
+              
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>  
+
+
+    <div class="site-section" id="features-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Features</h2>
+            
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-autorenew"></span></span>
+              </div>
+              <div>
+                <h3>Exceptional Commitment to Customer Service</h3>
+                <p>Every project we take on starts with the aim of being our 'best yet' , so you can be assured that our attention to detail and high 
+                  quality work is present in every job we craft.We want our customers to be excited and proud . we strive towards that goal everyday.
+                </p>
+               
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-store_mall_directory"></span></span>
+              </div>
+              <div>
+                <h3>Reward points & My Coupons</h3>
+                <p> The more you travel with us the more you will be eligible for reward points which can be redeemed during your next travel. Additional reward points for referring your dear & near ones.Your account enables you to get live status of your reward points any time. </p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up"  data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-shopping_basket"></span></span>
+              </div>
+              <div>
+                <h3>Wide Coverage...connecting Luke & Corner of India</h3>
+                <p> Our bus network covers more than 4000+ routes and connecting 1000+ operators across country for ensuring better reach. Major Cities, Rural Areas or even Pilgrim Places...travel anywhere with comfort. </p>
+              
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-settings_backup_restore"></span></span>
+              </div>
+              <div>
+                <h3>Food Delivery in Bus</h3>
+                <p> Now you can book your favorite food along with bus ticket booking and we will deliver at your seat in bus.
+
+                  "FoodInBus" - A value added option given by us in association with Creamcrow to its valued customers to make their travel easy.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-sentiment_satisfied"></span></span>
+              </div>
+              <div>
+                <h3>Book Now and Pay Later with ePayLater Payment</h3>
+                <p>ePayLater is a get service Now and Pay Later payment option which lets you get services first and pay later. You get 14 days from the date of booking  to settle your bills with us..</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+
+            
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-power"></span></span>
+              </div>
+              <div>
+                <h3>Transparent Cancellation Policy</h3>
+                <p>Our cancellation policies are very simple and can be seen all the time,even during the time of your booking . The cancellation policy is also clearly mentioned in the booking confirmation email </p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="site-section bg-light" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Introducing Safety+ </h2>
+            <p>Opt to travel safe with Roadtravellers </p>
+            <p class="text-primary">Look for buses with Safety+ tag while booking your journey,</p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          
+          <div class="col-lg-5 ml-auto pl-lg-5">
+            
+
+            <div class="author-box" data-aos="fade-left" style="max-width: 100%">
+              <div class="d-flex mb-4">
+              
+                <div class="mr-auto text-black">
+                  <strong class="font-weight-bold mb-0"> Sanitized Bus
+                  </strong> <br>
+                </div>
+  
+              </div>
+              All Safety+ buses are sanitized and disinfected before and after every trip.
+            </div>
+            
+
+            <div class="author-box mt-3" data-aos="fade-left" style="max-width: 100%">
+              <div class="d-flex mb-4">
+                  
+                  <div class="mr-auto text-black">
+                    <strong class="font-weight-bold mb-0">Mandatory masks </strong> <br>
+                  </div>
+  
+              </div>
+                Proper masks are mandatory for all passengers and bus staff.
+            </div>
+  
+            <div class="author-box mt-3" data-aos="fade-left" style="max-width: 100%">
+              <div class="d-flex mb-4">
+                  
+                <div class="mr-auto text-black">
+                    <strong class="font-weight-bold mb-0">Thermal Screening </strong> <br>
+                </div>
+  
+              </div>
+                All passengers will undergo thermal screening. Temperature checks for bus drivers and service staff are done before every trip.
+            </div>
+  
+          </div>
+
+          
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="{% static 'images/plus.png' %}"  alt="Image" class="img-fluid">
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+
+    
+   
+
+        <div class="site-section" id="blog-section">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-12 text-center">
+                <h2 class="section-title mb-3">The numbers are growing !!!! </h2>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                <div class="h-entry">
+                  
+                  <h1 class="text-primary" style="font-family: 'Lobster', cursive;">23 M<p>Customers</p></h1>
+                  <p>Roadtravellers is trusted by over 23 million happy customers globally</p>
+                </div> 
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                <div class="h-entry">
+                  
+                  <h1 class="text-primary" style="font-family: 'Lobster', cursive;">2600<p>Operators</p></h1> 
+                  <p>network of over 2600 bus operators worldwide</p> 
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                <div class="h-entry">
+                  
+                  <h1 class="text-primary" style="font-family: 'Lobster', cursive;">180+ M<p>Bus Tickets</p></h1>
+                  <p>Over 180 million trips booked using redBus</p>
+                </div> 
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    
+    <div class="site-section bg-light" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">About Us</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'images/undraw_bookmarks_r6up.svg' %}"   alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 ml-auto pl-lg-5">
+            <h2 class="text-black mb-4 h3 font-weight-bold">Our Mission</h2>
+            <p class="mb-4">Roadtravellers Online Pvt Ltd  is one of India's leading online travel companies and operates the website roadtravellers.com. The company provides information, pricing, availability, and booking facility for domestic and international air travel, domestic and international hotel bookings, holiday packages, buses, trains, in city activities, inter-city and point-to-point cabs, homestays and cruises. As a leading platform of accommodation options, roadtravellers provides real-time bookings for more than 83,000 hotels in India and over 800,000 hotels around the world.
+
+              Launched in August 2006, roadtravellers was ranked the Most Trusted e-Commerce Travel Brand in India in the Economic Times Brand Equity Survey 2016 for the second successive year, and has won the award for 'First Prize - Domestic Tour Operator (Rest of India)' at the India Tourism Awards held in July 2016. </p>
+            <p><a href="#" class="btn btn-primary">Learn More</a></p>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="site-section" id="our-team-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Our Services</h2>
+            
+          </div>
+        </div>
+       
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s5.png' %}"   alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">Semi Sleeper Facilties</h2>
+                </div>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s2.png' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">Sleeper Coaches</h2>
+                </div>
+              </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s3.png' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">Spacious Seats</h2>
+                </div>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-1" data-aos="fade-up">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s4.png' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">Luxurious Seats</h2>
+                </div>
+              </div>
+               </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-1" data-aos="fade-up" data-aos-delay="100">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s1.png' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">AC Sleeper Coaches</h2>
+                </div>
+              </div>
+               </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-1" data-aos="fade-up" data-aos-delay="200">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'images/s6.png' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <h2 style="color: white;font-family: 'Aladin', cursive;letter-spacing: 2px;">Electrical socket for each Seat</h2>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section testimonial-wrap bg-light" id="testimonials-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Testimonials</h2>
+          </div>
+        </div>
+      </div>
+      <div class="slide-one-item home-slider owl-carousel">
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="{% static 'images/dhoni.png'%}" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>I had a great experience with Roadtravellers </p>
+              </blockquote>
+              <p class="text-black"><strong>M S Dhoni</strong></p>
+
+              
+            </div>
+          </div>
+          <div>
+            <div class="testimonial">
+              
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="{% static 'images/anu.png'%}" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+              </figure>
+
+              <blockquote class="mb-3">
+                <p>Bus travel booking website Roadtravellers looks appealing .. good booking experience.. check it out !!!!</p>
+              </blockquote>
+              
+              <p class="text-black"><strong>Anushka Sharma</strong></p>
+              
+              
+            </div>
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="{% static 'images/ak.jpg' %}" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>Quite impressed and satisfied with the booking to boarding procedures by Roadtravellers</p>
+              </blockquote>
+              <p class="text-black"><strong>Akshay Kumar</strong></p>
+
+              
+            </div>
+           
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="{% static 'images/chopra.jpg'%}" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>Awesome Travel Site </p>
+              </blockquote>
+              <p class="text-black"><strong>Priyanka Chopra</strong></p>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+    </div>
+
+    <div class="site-section" id="blog-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Awards & Recognition</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              
+              <h1 class="text-primary" style="font-family: 'Lobster', cursive;">Most Innovative Company</h1>
+              
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              
+              <h1 class="text-primary" style="font-family: 'Lobster', cursive;">Most   Trusted   Brand </h1>  
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              
+              <h1 class="text-primary" style="font-family: 'Lobster', cursive;">Mobile Innovation Award</h1>
+              
+            </div> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+   
+
+    <div class="footer py-5 text-center">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <p class="mb-0">
+              <a href="#" class="p-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="p-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="p-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="p-3"><span class="icon-linkedin"></span></a>
+              <a href="#" class="p-3"><span class="icon-pinterest"></span></a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0">
+            
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-wrap -->
+  <form action="/signup" method="post">{% csrf_token %}
+  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold" style="color:#4285f4;">Sign up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix #4285f4-text" style="color:#4285f4;"></i>
+          <input type="text" id="orangeForm-name" name="name" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-name" style="color:#4285f4;">Name</label>
+        </div>
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix #4285f4-text" style="color:#4285f4;"></i>
+          <input type="email" id="orangeForm-email" name="email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-email" style="color:#4285f4;">Email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix #4285f4-text" style="color:#4285f4;"></i>
+          <input type="password" id="orangeForm-pass" name="pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass" style="color:#4285f4;">Password</label>
+        </div>
+
+      </div>
+      <div class="text-center mb-3">
+          <button type="submit" class="btn btn-primary btn-rounded">Sign Up</button>
+        </div>
+      <p class="font-small grey-text d-flex justify-content-end mr-5">Have an Account? <a href="#" class="blue-text ml-1">
+            Login</a></p>
+    </div>
+  </div>
+</div>
+</form>
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold" style="color:#4285f4;">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix #4285f4-text" style="color:#4285f4;"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email" style="color:#4285f4;">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix #4285f4-text" style="color:#4285f4;"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass" style="color:#4285f4;">Your password</label>
+        </div>
+   <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
+              Password?</a></p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-rounded">Login</button>
+         
+      </div>
+      <p class="font-small grey-text d-flex justify-content-end mr-5">Not a member? <a href="#" class="blue-text ml-1">
+            Sign Up</a></p>
+    </div>
+  </div>
+</div>
+  
+
+
+  
+  
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %} "></script>
+  <script src="{% static 'js/popper.min.js'%} "></script>
+  <script src="{% static 'js/bootstrap.min.js'%} "></script>
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js'%} "></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js'%} "></script>
+  <script src="{% static 'js/jquery.easing.1.3.js'%} "></script>
+  <script src="{% static 'js/aos.js'%}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js'%} "></script>
+  <script src="{% static 'js/jquery.sticky.js'%} "></script>
+  <script src="{% static 'js/main.js'%}"></script>
+  
+  </body>
+</html>
