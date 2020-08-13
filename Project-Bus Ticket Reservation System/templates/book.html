@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <title>Roadtravellers</title>
+    <style>
+        .nav-link{
+      color: black;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.7;
+      font-family: 'Nunito', sans-serif;
+    }
+    .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .u{
+      color:#4285f4;
+      font-family: 'Lemonada', cursive;
+      font-size: 20px;
+    }
+    .dropdown-item{
+        padding: 10px;
+        font-size: .9375rem;
+        font-weight: 300;
+        font-family: 'Lemonada', cursive;
+    }
+    .p{
+        padding: 10px;
+        font-size: 1.9375rem;
+        font-weight: 300;
+        font-family: 'Lemonada', cursive;
+      
+
+    }
+    .card-title{
+      font-size: 20px;
+      font-family: 'Lemonada', cursive;
+    }
+    .tit{
+      font-size: 15px;
+      color:rgba(0, 0, 0, 0.527);
+      font-family: 'Lemonada', cursive;
+    }
+    .in{
+      font-size: 15px;
+      font-family: 'Lemonada', cursive;
+    }
+  .card{
+    margin: 20px;
+  }
+
+    .card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-white bg-white fixed-top">
+    
+    
+        <div class="dropdown">
+          <a  class="dropdown-toggle u" data-toggle="dropdown">
+            Hello, {{name}}
+          </a>
+          <div class="dropdown-menu">
+            <a href="/myprofile" class="dropdown-item" >My Profile</a>
+            <a href="/mybookings" class="dropdown-item" >My Bookings</a>
+            
+          </div>
+        </div>
+      </div>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon" ></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active" style="margin-left: 30px;">Home</a>
+               
+                
+                       
+                
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/logout" style="margin-left: 990px;" class="nav-item nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <form action="/book" method="post">{% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+          <span  class="p"><a name='date'>{{date}}</a></span><div style="text-align: center;"><span class="p"><a name='fro'>{{fro}}</a></span>------------><span name="to" class="p"><a name='to'>{{to}}</a></span></div>
+        </div>
+      </div>
+
+
+      
+<div class="row">
+  {% for bus in buses%}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">{{bus.travel}}</h1>
+
+
+        <div class="row tit">
+          <div class="col-sm">
+            Departure
+            </div>
+          <div class="col-sm">
+            Fare
+          </div>
+          <div class="col-sm">
+            Category
+          </div>
+          <div class="col-sm">
+           Seats Available
+          </div>
+          
+        </div>
+
+
+        <br>
+
+
+    <div class="row in">
+    <div class="col-sm" >
+      <a name='time'>
+      {{bus.depart}}
+      </a>
+    </div>
+    <div class="col-sm" name="fare">
+      <a name='fare'>
+      {{bus.fare}}
+      </a>
+    </div>
+    <div class="col-sm" name="category">
+      <a name='category'>
+      {{bus.category}}
+      </a>
+    </div>
+    <div class="col-sm">
+     {{bus.av_seats}}
+    </div>
+  </div>
+  <button type="submit" id="b" data-bus="{{bus.id}}"  data-fro="{{fro}}"  data-to="{{to}}" data-dat="{{date}}" data-action="add" class="btn btn-primary update-cart mt-5">Proceed to Book</button>
+      </div>
+    </div>
+  </div>
+  
+  {% endfor %}
+</form>
+
+</body>
+<script>
+
+function getToken(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getToken('csrftoken');
+  console.log('book')
+  var up=document.getElementsByClassName('update-cart')
+  console.log(up)
+  for(var i=0;i<up.length;i++){
+    up[i].addEventListener('click',function(){
+      var busid=this.dataset.bus
+      var action=this.dataset.action
+      var fro=this.dataset.fro
+      var to=this.dataset.to
+      var dat=this.dataset.dat
+      
+      console.log('ID: ',busid,'action: ',action)
+      console.log(dat)
+      update(busid,action,fro,to,dat)
+    })
+  }
+  function update(busid,action,fro,to,dat){
+    console.log("sending data...")
+
+    var url='/update_item/'
+    fetch(url,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'X-CSRFToken':csrftoken,
+      },
+      body:JSON.stringify({'busid':busid,'action':action,'fro':fro,'to':to,'dat':dat})
+    })
+    .then((response)=>{
+      return response.json()
+    })
+    .then((data)=>{
+      console.log('data:',data)
+    })
+  }
+
+  
+</script>
+</html>

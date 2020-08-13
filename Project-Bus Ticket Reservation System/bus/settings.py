@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.contrib.messages import constants as messages
+# import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,8 +40,37 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.sites', 
     'app',
+    'app.booking_functions',
+
+    # 'allauth',   
+    # 'allauth.account',  
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google', 
+    
 ]
+AUTHENTICATION_BACKENDS = (
+ 'django.contrib.auth.backends.ModelBackend',
+ 'app.backends.EmailAuthBackend',
+ #'allauth.account.auth_backends.AuthenticationBackend',
+ )
+
+# SITE_ID = 2
+# LOGIN_REDIRECT_URL = '/'
+
+
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'SCOPE': [
+#             'profile',
+#             'email',
+#         ],
+#         'AUTH_PARAMS': {
+#             'access_type': 'online',
+#         }
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,7 +81,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 ROOT_URLCONF = 'bus.urls'
 
 TEMPLATES = [
@@ -117,8 +149,8 @@ USE_L10N = True
 USE_TZ = True
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'priyadharmaraj287@gmail.com'
-EMAIL_HOST_PASSWORD ='lavendar'
+EMAIL_HOST_USER = 'your email id'
+EMAIL_HOST_PASSWORD ='password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -133,3 +165,12 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+# Activate Django-Heroku.
+# django_heroku.settings(locals())

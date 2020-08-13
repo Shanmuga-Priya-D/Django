@@ -328,7 +328,8 @@ h1, h2, h3, h4, h5,
         padding: 15px 6px;
         color: #000;
         display: inline-block;
-        text-decoration: none !important; }
+        text-decoration: none !important;
+      font-size: larger; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
           color: #4285f4; }
     .site-navbar .site-navigation .site-menu .has-children {
